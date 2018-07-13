@@ -96,12 +96,13 @@ public class MainActivity extends AppCompatActivity {
                     if (mapSiteListadapter.itemChecked[i] == true) {
 
                         checkedSiteList.add(new Data(mapSiteListadapter.SiteIdNameList.get(i)));
-                        checkedDistanceList.add(new Data(mapSiteListadapter.distanceList.get(i)));
+                        //checkedDistanceList.add(new Data(mapSiteListadapter.distanceList.get(i)));
                     }
                 }
 
                 list.addAll(checkedSiteList);
-
+               // mapSiteListadapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();
                 // Now element  is moved one position back
                 // So element 30 is removed this time
                /* for(int i=0;i<checkedSiteList.size();i++){
@@ -117,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
 */
 
 
-                mapSiteListadapter.notifyDataSetChanged();
-                adapter.notifyDataSetChanged();
+
 
                 //  Toast.makeText(RoutePlanningActivity.this,checkedSiteList,Toast.LENGTH_SHORT).show();
             }
